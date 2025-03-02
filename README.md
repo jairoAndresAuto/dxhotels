@@ -52,13 +52,13 @@ Estado: Abierto
 id:3<br>
 titulo: dar clic en el comprar nos deja en una pantalla negra<br>
 Descripcion: Al realizar el proceso de compra del producto nos esta saliendo una pantalla negra y no sale mensaje de exito<br>
-Pasos: <br>
-       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
-       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]
-	   3. Dar clic en buscar
-	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200
-	   5. Dar clic en el boton Book It
-	   6. Dar clic en el boton Print Invoce
+Pasos:  <br>
+       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/" <br>
+       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2] <br>
+	   3. Dar clic en buscar<br>
+	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200<br>
+	   5. Dar clic en el boton Book It<br>
+	   6. Dar clic en el boton Print Invoce<br>
 Resultado esperado: ver el mensaje de exito<br>
 Resultado actual: No esta desplegando una pantalla negra<br>
 Prioridad: Alta<br>
@@ -70,10 +70,10 @@ titulo: precio oferta diferente a pago factura<br>
 Descripcion: Al realizar el proceso de compra del producto estamos obteneniendo una diferencia entre el precio de la oferta y el precio a pagar
 Pasos: <br>
        1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
-       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]
-	   3. Dar clic en buscar
-	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200
-	   5. Dar clic en el boton Book It
+       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]<br>
+	   3. Dar clic en buscar<br>
+	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200<br>
+	   5. Dar clic en el boton Book It<br>
 Resultado esperado: el precio de venta es el mismo a la hora del pago<br>
 Resultado actual: El valor de oferta es diferente al del pago<br>
 Prioridad: Alta<br>
@@ -85,9 +85,9 @@ titulo: no esta aplicando bien el filtro de los precios<br>
 Descripcion: Al realizar el proceso de filtrado de un producto podemos ver que no saca los valores de manera correcta
 Pasos: <br>
        1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
-       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]
-	   3. Dar clic en buscar
-	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200
+       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]<br>
+	   3. Dar clic en buscar<br>
+	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200<br>
 Resultado esperado: Ninguno de los elementos debe estar por fuera del filtro<br>
 Resultado actual: Esta mostrando un producto que no cumple con el filtro<br>
 Prioridad: Alta<br>
