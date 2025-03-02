@@ -1,9 +1,12 @@
 # Serenity BDD project using Cucumber and Screenplay 
-16/08/2022
 
-Serenity BDD is a library that makes it easier to write high quality automated acceptance tests, with powerful reporting and living documentation features. It has strong support for both web testing with Selenium, and API testing using RestAssured.
+01/03/2025
 
-Serenity strongly encourages good test automation design, and supports several design patterns, including classic Page Objects, the newer Lean Page Objects/ Action Classes approach, and the more sophisticated and flexible Screenplay pattern.
+* Screenplay Pattern es un patrón de diseño que enfoca las pruebas en las acciones que un actor realiza en el sistema.
+* Las pruebas son más legibles, modulares y mantenibles.
+* Se abstraen las interacciones de los elementos de la interfaz y se combinan en tareas reutilizables.<br>
+Fomenta una separación clara de responsabilidades y es altamente escalable.
+Este patrón se usa principalmente en herramientas como Serenity BDD, Cucumber o JBehave, para escribir pruebas de automatización que sean fáciles de entender y de mantener.
 
 ### Prerequisites
 * Java 17 installed
@@ -14,42 +17,81 @@ Serenity strongly encourages good test automation design, and supports several d
 
 ### Basic Commands
 
-To run a specific Tag
-`gradle clean test -Dcucumber.filter.tags=@smoketest`
-
 To run a specific Runner
-`gradle clean test --tests=Login`
+`gradle clean test --tests=ManagerTest`
 
-<img src="https://blog.caplin.com/wp-content/uploads/2016/12/screenPlayWorkFlow-1024x511.png" alt="Screenplay Pattern" />
 
-### Actor
-Actors have some kind of **goals:** they want to achieve certain things, so let define our actor as Mauricio
+### Bugs login
+id:1<br>
+titulo: login no tiene la opcion de registrarse<br>
+Descripcion: El login necesita la opcion de registro para poder acceder a una cuenta para realizar las pruebas de login<br>
+Pasos: <br>
+       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
+       2. Dar clic en el boton login
+Resultado esperado: ver el boton de registrese<br>
+Resultado actual: No esta implementada esta opcion<br>
+Prioridad: Alta<br>
+Impacto: usuarios no pueden realizar login en la plataforma de dxhotels<br>
+Estado: Abierto
 
-Actors also have **abilities:** Mauricio might be able to browse the web, able to interact with the web interface.
+id:2<br>
+titulo: login tiene captcha<br>
+Descripcion: Para realizar un login exitoso o fallido dentro de la aplicacion el login no debe tener captcha, por que la automatizacion no es capaz de mapear dicho campo por que es un campo de seguridad.<br>
+Pasos:<br> 
+       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
+       2. Dar clic en el boton login<br>
+	   3. ingresar usuarios<br>
+	   4. Ingresar contraseña
+Resultado esperado: dar clic en Login e ingresar a la pagina<br>
+Resultado actual: cuanta con captcha y al dar clic en el login nos sale este mensaje "The submitted code is incorrect"<br>
+Prioridad: Alta<br>
+Impacto: usuarios no pueden realizar login en la plataforma de dxhotels<br>
+Estado: Abierto
 
-Actors have **tasks** to achieve their **goals:** Mauricio can perform certain **tasks** 
+### Bugs proceso de compras
+id:3<br>
+titulo: dar clic en el comprar nos deja en una pantalla negra<br>
+Descripcion: Al realizar el proceso de compra del producto nos esta saliendo una pantalla negra y no sale mensaje de exito<br>
+Pasos: <br>
+       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
+       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]
+	   3. Dar clic en buscar
+	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200
+	   5. Dar clic en el boton Book It
+	   6. Dar clic en el boton Print Invoce
+Resultado esperado: ver el mensaje de exito<br>
+Resultado actual: No esta desplegando una pantalla negra<br>
+Prioridad: Alta<br>
+Impacto: usuarios no pueden realizar compras en la plataforma de dxhotels<br>
+Estado: Abierto
 
-### Tasks
-Tasks are business level concepts, they are concerned with whether we are trying to interact with a UI, interacting with Web service or a with a RESTful service. Here Mauricio wants to search for the available tickets from the origin to destination.
+id:4<br>
+titulo: precio oferta diferente a pago factura<br>
+Descripcion: Al realizar el proceso de compra del producto estamos obteneniendo una diferencia entre el precio de la oferta y el precio a pagar
+Pasos: <br>
+       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
+       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]
+	   3. Dar clic en buscar
+	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200
+	   5. Dar clic en el boton Book It
+Resultado esperado: el precio de venta es el mismo a la hora del pago<br>
+Resultado actual: El valor de oferta es diferente al del pago<br>
+Prioridad: Alta<br>
+Impacto: usuarios se confunden con el precio real del articulo<br>
+Estado: Abierto
 
-Actors use their ability to **interact with the system** in order to perform the task. Here john will enter the source and destination station, select a given date and finally search for a ticket.
+id:5<br>
+titulo: no esta aplicando bien el filtro de los precios<br>
+Descripcion: Al realizar el proceso de filtrado de un producto podemos ver que no saca los valores de manera correcta
+Pasos: <br>
+       1. ingresar a la siguietne url "https://demos.devexpress.com/rwa/dxhotels/"<br>
+       2. Ingresar la informacion de la reserva: [Paris, fechaActualMasDosDiasMas, fechaActualMasSieteDiasMas, Habitaciones: 2, adultos: 3, Niños: 2]
+	   3. Dar clic en buscar
+	   4. Filtrar los elementos por hoteles de 3 o mas estrellas y que su precio sea mayor a 200
+Resultado esperado: Ninguno de los elementos debe estar por fuera del filtro<br>
+Resultado actual: Esta mostrando un producto que no cumple con el filtro<br>
+Prioridad: Alta<br>
+Impacto: usuarios se confunden con la lista filtrada por precio<br>
+Estado: Abierto
 
-### Actions/InterActions
-Actions/InterActions are classes which encapsulate interactions between the user and the system. We don’t think in terms of pages or fields rather we think in terms of the behaviour of how the user interacts with the system. The Actor will **Enter** something on a provided element and Click on an element, and where do we get it from, well we get it from a **PageObject** and its only role is to contain the locators for the field.
 
-### Questions
-Actors can ask **Questions** about the state of the system: Actors use these questions to test their assumptions or to check their expectations about what the results of the outcome should be.
-
-Actors should get **answers** to questions he/she asked so that it can be decided whether it’s right or wrong.
-
-## Reference:
-* **[Screenplay Pattern](https://blog.caplin.com/2017/01/04/screenplay-pattern-a-solid-alternative-pattern-to-page-objects/)**
-* **[Screenplay Pattern](https://medium.com/testvagrant/screenplay-pattern-3490c7f0c23c)**
-* **[SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/#:~:text=The%20SOLID%20Principles%20are%20five,and%20software%20architecture%20in%20general.)**
-
-## Want to learn more?
-For more information about Serenity BDD, you can read the [**Serenity BDD Book**](https://serenity-bdd.github.io/theserenitybook/latest/index.html), the official online Serenity documentation source. Other sources include:
-* **[Learn Serenity BDD Online](https://expansion.serenity-dojo.com/)** with online courses from the Serenity Dojo Training Library
-* **[Byte-sized Serenity BDD](https://www.youtube.com/channel/UCav6-dPEUiLbnu-rgpy7_bw/featured)** - tips and tricks about Serenity BDD
-* For regular posts on agile test automation best practices, join the **[Agile Test Automation Secrets](https://www.linkedin.com/groups/8961597/)** groups on [LinkedIn](https://www.linkedin.com/groups/8961597/) and [Facebook](https://www.facebook.com/groups/agiletestautomation/)
-* [**Serenity BDD Blog**](https://johnfergusonsmart.com/category/serenity-bdd/) - regular articles about Serenity BDD
