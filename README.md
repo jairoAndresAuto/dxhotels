@@ -18,7 +18,7 @@ Este patrón se usa principalmente en herramientas como Serenity BDD, Cucumber o
 ### Basic Commands
 
 To run a specific Runner
-`gradle clean test --tests=ManagerTest`
+`gradle clean test --parallel`
 
 
 ### Bugs login
