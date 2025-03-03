@@ -18,4 +18,5 @@ public class Constantes {
     public static final String CORREO ="@hotmail.com";
     public static final int CERO = 0;
     public static final int UNO = 1;
+    public static final int DOS = 2;
 }

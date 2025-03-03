@@ -41,7 +41,7 @@ public class LlenarInformacion implements Task {
         } else {
             actor.attemptsTo(Clear.field(TXT_CHECKOUT));
         }
-        if (datos.get(0).get(DIAS_IDA) == null) {
+        if (datos.get(CERO).get(DIAS_IDA) == null) {
             actor.attemptsTo(Clear.field(TXT_CHECKIN));
         }
         actor.attemptsTo(Click.on(BTN_BUSCAR));
