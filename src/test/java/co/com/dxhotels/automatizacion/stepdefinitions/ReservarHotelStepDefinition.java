@@ -1,10 +1,7 @@
 package co.com.dxhotels.automatizacion.stepdefinitions;
 
 import co.com.dxhotels.automatizacion.questions.ValidarMensaje;
-import co.com.dxhotels.automatizacion.tasks.AplicarFiltros;
-import co.com.dxhotels.automatizacion.tasks.EscogerProducto;
-import co.com.dxhotels.automatizacion.tasks.LlenarInformacion;
-import co.com.dxhotels.automatizacion.tasks.RecolectarDatos;
+import co.com.dxhotels.automatizacion.tasks.*;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Entonces;
 import io.cucumber.java.es.Y;
@@ -35,6 +32,11 @@ public class ReservarHotelStepDefinition {
                 EscogerProducto.hotelMenosPrecio());
     }
 
+    @Y("llenar la informacion de la reserva")
+    public void llenarLaInformacionDeLaReserva() {
+        theActorInTheSpotlight().attemptsTo(InformacionReserva.hotel());
+    }
+
     @Entonces("se valida que muestre el siguiente mensaje")
     public void seValidaQueMuestreElSiguienteMensaje() {
         theActorInTheSpotlight().should(seeThat(ValidarMensaje.
@@ -48,4 +50,6 @@ public class ReservarHotelStepDefinition {
                 deElementos(LBL_MENSAJE_REQUERIDO   .resolveFor(theActorInTheSpotlight()).getText(),
                         mensaje)));
     }
+
+
 }

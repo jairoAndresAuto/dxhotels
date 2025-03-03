@@ -7,8 +7,8 @@ import net.serenitybdd.screenplay.Interaction;
 
 import java.util.List;
 
-import static co.com.dxhotels.automatizacion.userinterfaces.RecolectarDatosUI.ESTRELLAS;
-import static co.com.dxhotels.automatizacion.userinterfaces.RecolectarDatosUI.PRECIO;
+import static co.com.dxhotels.automatizacion.userinterfaces.RecolectarDatosUI.LBL_ESTRELLAS;
+import static co.com.dxhotels.automatizacion.userinterfaces.RecolectarDatosUI.LBL_PRECIO;
 import static co.com.dxhotels.automatizacion.util.Constantes.PRECIOS;
 
 @AllArgsConstructor
@@ -19,8 +19,8 @@ public class Recolectar implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        precios = PRECIO.resolveAllFor(actor).texts();
-        estrellas= ESTRELLAS.resolveAllFor(actor).texts();
+        precios = LBL_PRECIO.resolveAllFor(actor).texts();
+        estrellas= LBL_ESTRELLAS.resolveAllFor(actor).texts();
         actor.remember(PRECIOS, precios);
         actor.remember(Constantes.ESTRELLAS, estrellas);
     }

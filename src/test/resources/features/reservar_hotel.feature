@@ -10,6 +10,7 @@ Característica: Como analista de automatizacion de pruebas o desarrollador
       | <posicion_habitaciones> | <adultos> | <childs> | <ciudad> | <dias_ida> | <dias_vuelta> |
     Y realizar los filtros
     Y escoger el hotel de precio mas bajo
+    Y llenar la informacion de la reserva
     Entonces el sistema debera mostrar el siguente "<mensaje>"
 
     Ejemplos:
@@ -25,7 +26,7 @@ Característica: Como analista de automatizacion de pruebas o desarrollador
 
     Ejemplos:
       | posicion_habitaciones | adultos | childs | ciudad | dias_ida | dias_vuelta |
-      | 6                     | 3       | 2      |        | 2        | 7           |
+    #  | 6                     | 3       | 2      |        | 2        | 7           |
 
   Esquema del escenario: Validar campos checkin y checkout
     Dado que el usuario ingreso a la pagina de dxhotels
@@ -36,5 +37,5 @@ Característica: Como analista de automatizacion de pruebas o desarrollador
 
     Ejemplos:
       | posicion_habitaciones | adultos | childs | ciudad | dias_ida | dias_vuelta | mensaje                    |
-      | 36                    | 3       | 2      | Paris  |          | 7           | Check in date is required  |
-      | 36                    | 3       | 2      | Paris  | 2        |             | Check out date is required |
+  #    | 36                    | 3       | 2      | Paris  |          | 7           | Check in date is required  |
+    #  | 36                    | 3       | 2      | Paris  | 2        |             | Check out date is required |

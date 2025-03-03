@@ -15,6 +15,7 @@ public class Constantes {
     public static final String LISTA_FILTRADA =   "listaFiltrada";
     public static final String PRECIOS =   "precios";
     public static final String ESTRELLAS =   "estrellas";
+    public static final String CORREO ="@hotmail.com";
     public static final int CERO = 0;
     public static final int UNO = 1;
 }
