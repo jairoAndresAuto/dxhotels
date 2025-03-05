@@ -13,6 +13,8 @@ public class InformacionReservaUI {
             .located(By.id("MainContentPlaceHolder_ASPxFormLayout1_EmailTextBox_I"));
     public static final Target TXT_NOMBRE_TARJETA = Target.the("texto nombre tarjeta")
             .located(By.id("MainContentPlaceHolder_PaymentPageControl_CreditCardFormLayout_CreditCardNameTextBox_I"));
+    public static final Target TXT_NUMERO_TARJETA = Target.the("texto nombre tarjeta")
+            .located(By.id("MainContentPlaceHolder_PaymentPageControl_CreditCardFormLayout_CreditCardNumberTextBox_I"));
     public static final Target TXT_CORREO_TARJETA = Target.the("texto correo tarjeta")
             .located(By.id("MainContentPlaceHolder_PaymentPageControl_CreditCardFormLayout_CreditCardEmailTextBox_I"));
     public static final Target BTN_RESERVAR = Target.the("boton reservar")

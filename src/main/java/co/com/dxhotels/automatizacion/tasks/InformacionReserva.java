@@ -26,6 +26,7 @@ public class InformacionReserva implements Task {
                 Scroll.to(TXT_CORREO_TARJETA),
                 Enter.theValue(nombre).into(TXT_NOMBRE_TARJETA),
                 Enter.theValue(nombre + CORREO).into(TXT_CORREO_TARJETA),
+                Enter.theValue("3344 4444 4444 4444").into(TXT_NUMERO_TARJETA),
                 Scroll.to(BTN_RESERVAR),
                 Click.on(BTN_RESERVAR));
     }
